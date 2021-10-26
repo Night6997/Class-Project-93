@@ -17,7 +17,7 @@ function addRoom(){
       var room_name = document.getElementById("inputRoom").value;
       firebase.database().ref("/").child(room_name).update({
 
-            roomkey: "purpose addin room"
+            roomkey: "purpose adding room"
 
       });
       
@@ -43,5 +43,13 @@ function redirectToRoomName(name){
      console.log(name);
      localStorage.setItem("inputRoom", name);
      window.location="kwitter_page.html";
+
+}
+
+function logout(){
+
+      localStorage.removeItem("username");
+      localStorage.removeItem("inputRoom");
+      window.location="index.html";
 
 }
